@@ -12,7 +12,8 @@
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 </head>
 <body>
-
+    <h2 alt="RDT&amp;E stands for Research, Development, Test and Evaluation">2017 Department of Defense RDT&E Budget Request (Amended)</h2>
+    <h4>Does not include $17B+ in classified programs</h4>
     <script>
 		d3.json("https://gist.githubusercontent.com/sephcoster/c64c316b597895f0a644e4cbc5ed941c/raw/0be456471e8cbc17da626f134ac6536d9be8d00d/r1-2017-dod.json", function(data) {
         buildChart(data);
@@ -183,7 +184,7 @@
                 .key(function(d) { return d["Program Element / Budget Line Item (BLI) Title"]; })
                 .rollup(function(leaves) {
                     // Our data contains string values for budget so we need to convert for computation here.
-                    var leafBudget = parseFloat(leaves[0]["FY 2017 Revised PB Request Base"].replace(',','')).toFixed(2);
+                    var leafBudget = (parseFloat(leaves[0]["FY 2017 Revised PB Request Base"].replace(',',''))*1000).toFixed(2);
                     return leafBudget;
                 })
                 .entries(dataset)
@@ -210,14 +211,6 @@
             .attr("text-anchor", "middle")
             .attr("transform", "translate(" + 0 + "," + (12 + height/2)  +")")
             .style("pointer-events", "none");
-
-        // Add the title.
-        svg.append("text")
-            .attr("font-size", 16)
-            .attr("fill", "#000")
-            .attr("text-anchor", "middle")
-            .attr("transform", "translate(" + 0 + "," + (-10 -height/2)  +")")
-            .text("FY17 DoD RDT&E Budget Request (Amended)");
 
         // Handle clicks on data points. All
         // we need to do is start the transition
@@ -280,3 +273,5 @@ var utils = {
 };
 
 </script>
+</body>
+</html>

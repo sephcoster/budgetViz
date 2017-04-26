@@ -10,3 +10,6 @@ Visualizing data like this is much easier with source JSON. Working these number
 - [Operational Budget Request (O-1)](https://gist.github.com/sephcoster/c64c316b597895f0a644e4cbc5ed941c#file-o1-2017-dod-json)
 - [Procurement Budget Request (P-1)](https://gist.github.com/sephcoster/c64c316b597895f0a644e4cbc5ed941c#file-p1-2017-dod-json)
 - [RDT&E (Research, Development, Test & Evaluation) Budget Request (R-1)](https://gist.github.com/sephcoster/c64c316b597895f0a644e4cbc5ed941c#file-r1-2017-dod-json)
+
+Humbly forked and prodded from this original example from [Stephen A Thomas](https://bl.ocks.org/sathomas):
+http://bl.ocks.org/sathomas/4a3b74228d9cb11eb486
