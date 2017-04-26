@@ -14,6 +14,10 @@
 <body>
     <h2 alt="RDT&amp;E stands for Research, Development, Test and Evaluation">2017 Department of Defense RDT&E Budget Request (Amended)</h2>
     <h4>Does not include $17B+ in classified programs</h4>
+    <div class="sunburst"></div>
+    <h5>Source and other information: <a href="https://github.com/sephcoster/budgetViz">https://github.com/sephcoster/budgetViz</a>
+
+    </div>
     <script>
 		d3.json("https://gist.githubusercontent.com/sephcoster/c64c316b597895f0a644e4cbc5ed941c/raw/0be456471e8cbc17da626f134ac6536d9be8d00d/r1-2017-dod.json", function(data) {
         buildChart(data);
@@ -32,7 +36,7 @@
         // group element (`<g>`) that can be transformed via
         // a translation to account for the margins and to
         // center the visualization in the container.
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select("div.sunburst").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
           .append("g")
@@ -189,7 +193,6 @@
                 })
                 .entries(dataset)
         };
-        console.log('HIERARCHY: ', hierarchy);
 
         // Construct the visualization.
         var path = svg.selectAll("path")
